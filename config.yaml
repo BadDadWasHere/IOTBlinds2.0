@@ -1,0 +1,10 @@
+#ip addresses
+ipaddrs:
+  - localhost:5000
+  - 127.0.0.1:5000
+  - blinds.google.com
+ 
+
+
+#icalenderURL
+calurl: "https://calendar.google.com/calendar/ical/fbh6bc643qnhgnsnk6nj8j0lqg%40group.calendar.google.com/private-dad918973d4ba68fe80a3a035b734bce/basic.ics"

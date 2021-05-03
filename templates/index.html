@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<! --start of the html-->
+
+<head>
+	<meta charset="utf-8" content="width=device-width, initial-scale=5.0">
+	<title>
+		Master Controller
+	</title>
+	<link rel="stylesheet" href="myStyles.css" type: "text/css">
+</head>
+
+<body>
+	<h1>
+		Blinds Master Controller
+		<! --The title -->
+	</h1>
+	<table>
+		<tr>
+			<td>
+				<table>
+					<form action="" method="POST">
+						<! -- Create buttons, give them the method to send   POST-->
+						<tr>
+							<th>
+								All
+								<input type="hidden" name="Device" value="All">
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <input type="submit" name="Direction" value="up" class="button upbutton"><! --Up button, set direction to up -->
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="submit" name="Direction" value="down" class="button downbutton"><! --down button, set direction to down --> 
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="submit" name="Direction" value="stop" class="button stopbutton"><! --stop button, set direction to stop --> 
+                </td>
+              </tr>
+            </form>
+          </table>
+        </td>
+        {% for i in ipaddress %}
+          <td>
+            <table>
+            <form action="" method="POST"> <! -- Create buttons, give them the method to send   POST-->
+              <tr>
+                <th>
+                  {% set b = i.split(".") %}
+                  {{ b[0] }}
+                  <input type="hidden" name="Device" value="{{ i }}">
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <input type="submit" name="Direction" value="up" class="button upbutton"><! --Up button, set direction to up -->
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="submit" name="Direction" value="down" class="button downbutton"><! --down button, set direction to down --> 
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="submit" name="Direction" value="stop" class="button stopbutton"><! --stop button, set direction to stop --> 
+                </td>
+              </tr>
+            </form>
+            </table>
+          </td>
+        {% endfor %}
+        <!-- <td>
+          <table>
+
+        </td> -->
+      </tr>
+    </table>
+    <table>
+      {% for i in log  %}
+        <tr>
+          <td>
+            {{ i }}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
